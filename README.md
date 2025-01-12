@@ -1,24 +1,25 @@
 1. User registration and authentication
+   
    New user registration:
-     Username
-     email
-     password
-     delivery address
-     phone number
+     Username,
+     email,
+     password,
+     delivery address,
+     phone number,
    User authentication:
      Using tokens for secure user authentication. (Хотелось бы разобрать работу с токенами)
    User roles:
-     Administrator
+     Administrator,
      Client
    
-2. Admin panel for content
+3. Admin panel for content
    Managing dishes:
-     Name
-     Description
-     Price
+     Name,
+     Description,
+     Price,
      Image
    
-3. Client interface
+4. Client interface
    Food category selection:
      The client can choose a dish category (e.g., burgers, salads, grill).
    Restaurant selection:
@@ -26,7 +27,7 @@
    View all dishes:
      Ability to view all available dishes from various restaurants.
    
-4. Cart and orders
+5. Cart and orders
    Cart functionality:
      Adding dishes to the cart.
      Reviewing ordered dishes.
