@@ -1,87 +1,41 @@
 1. User registration and authentication
    
-   New user registration:
+   New user registration: Username, email, password, delivery address, phone number
    
-     Username,
+   User authentication: Using tokens for secure user authentication. (Хотелось бы разобрать работу с токенами)
    
-     email,
-   
-     password,
-   
-     delivery address,
-   
-     phone number,
-   
-   User authentication:
-   
-     Using tokens for secure user authentication. (Хотелось бы разобрать работу с токенами)
-   
-   User roles:
-   
-     Administrator,
-   
-     Client
+   User roles: Administrator, Client
 
    
-3. Admin panel for content
+2. Admin panel for content
    
-   Managing dishes:
-   
-     Name,
-   
-     Description,
-   
-     Price,
-   
-     Image
+   Managing dishes: Name, Description, Price, Image
 
    
-5. Client interface
+3. Client interface
    
-   Food category selection:
+   Food category selection: The client can choose a dish category (e.g., burgers, salads, grill).
    
-     The client can choose a dish category (e.g., burgers, salads, grill).
+   Restaurant selection: The client can choose restaurant.
    
-   Restaurant selection:
-   
-     The client can choose restaurant.
-   
-   View all dishes:
-   
-     Ability to view all available dishes from various restaurants.
+   View all dishes: Ability to view all available dishes from various restaurants.
    
    
-7. Cart and orders
+4. Cart and orders
    
-   Cart functionality:
+   Cart functionality: Adding dishes to the cart, Reviewing ordered dishes.
    
-     Adding dishes to the cart.
-   
-     Reviewing ordered dishes.
-   
-   Order settings:
-   
-     Selecting delivery time and date.
-   
-     Selecting delivery adress (work with map)
-   
-     Payment methods (online payment, cash on delivery).
-   
-     Order confirmation.
+   Order settings: Selecting delivery time and date, Selecting delivery adress (work with map), Payment methods (online payment, cash on delivery), Order confirmation.
    
    
-9. Order status and tracking order status:
+5. Order status and tracking order status:
     
    Tracking the order status (e.g., "Processing", "On the way", "Delivered").
 
    Tracking the courier on the map.
    
-12. Reviews
+6. Reviews
     
-   Delivery reviews:
-   
-   The client can leave a review about the delivery service (speed, and quality).
+    Delivery reviews: The client can leave a review about the delivery service (speed, and quality).
      
-   Restaurant and dish reviews:
-   
-   Rating restaurants and dishes (stars and comments).
+    Restaurant and dish reviews: Rating restaurants and dishes (stars and comments).
