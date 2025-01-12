@@ -2,7 +2,7 @@
    
    New user registration: Username, email, password, delivery address, phone number
    
-   User authentication: Using tokens for secure user authentication. (Хотелось бы разобрать работу с токенами)
+   User authentication: Using tokens for secure user authentication.
    
    User roles: Administrator, Client
 
