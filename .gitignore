@@ -1,5 +1,16 @@
-# Byte-compiled / optimized / DLL files
+.Ds_Store
+
+.idea/
+.vscode/
+
 __pycache__/
+
+# Ignore virtual environments
+venv/
+env/
+.venv/
+
+
 *.py[cod]
 *$py.class
 
