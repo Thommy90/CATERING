@@ -138,7 +138,7 @@ class Scheduler:
             else:
                 orders_to_remove = set()
                 for key, value in delivery_items.items():
-                    if len(value) > 2 and value[1] == "archived" and (now - value[2]).total_seconds() > 5:
+                    if len(value) > 2 and value[1] == "archived" and (now - value[2]).total_seconds() / 60 > 1:
                         orders_to_remove.add(key)
 
                 for order_id in orders_to_remove:
