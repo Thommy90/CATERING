@@ -39,17 +39,18 @@ Follow these steps to set up the project locally:
 
 5. **Apply database migrations:**
    ```bash
-   python manage.py migrate
+   python catering/manage.py migrate
+
    ```
 
 6. **Create a superuser (optional for admin access):**
    ```bash
-   python manage.py createsuperuser
+   python catering/manage.py createsuperuser
    ```
 
 7. **Run the development server:**
    ```bash
-   python manage.py runserver
+   python catering/manage.py runserver
    ```
 
 Once the server is running, visit `http://127.0.0.1:8000/` in your browser.
