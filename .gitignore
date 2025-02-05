@@ -3,6 +3,13 @@
 .idea/
 .vscode/
 
+# SQLite database
+db.sqlite3
+*.sqlite3
+
+# PostgreSQL dumps
+*.dump
+
 __pycache__/
 
 # Ignore virtual environments

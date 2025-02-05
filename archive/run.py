@@ -84,7 +84,6 @@ class DeliveryService(abc.ABC):
 
             time.sleep(0.5)  # delay, cause we don't want CPU 100%
 
-
     def _ship(self, delay: int):
         """all concrete .ship() MUST call that method!"""
 
@@ -138,7 +137,11 @@ class Scheduler:
             else:
                 orders_to_remove = set()
                 for key, value in delivery_items.items():
-                    if len(value) > 2 and value[1] == "archived" and (now - value[2]).total_seconds() / 60 > 1:
+                    if (
+                        len(value) > 2
+                        and value[1] == "archived"
+                        and (now - value[2]).total_seconds() / 60 > 1
+                    ):
                         orders_to_remove.add(key)
 
                 for order_id in orders_to_remove:
@@ -187,7 +190,6 @@ def main():
     threading.Thread(target=scheduler.process_orders, daemon=True).start()
     threading.Thread(target=DeliveryService._process_delivery, daemon=True).start()
     threading.Thread(target=scheduler._remove_archived, daemon=True).start()
-
 
     # user input example
     # A 5
