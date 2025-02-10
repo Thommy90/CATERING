@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import DeliveryDishesOrder
-from unfold.admin import ModelAdmin  # Import Unfold's ModelAdmin
+from unfold.admin import ModelAdmin
 
 @admin.register(DeliveryDishesOrder)
 class DeliveryDishesOrderAdmin(ModelAdmin):
@@ -8,7 +8,6 @@ class DeliveryDishesOrderAdmin(ModelAdmin):
     list_filter = ('provider', 'status')
     search_fields = ('external_order_id',)
 
-    # Adding charts for deliveries by status and provider
     dashboard_charts = [
         {
             'title': 'Deliveries by Status',

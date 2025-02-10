@@ -4,12 +4,10 @@
 {% block content %}
     {{ block.super }}
 
-    <!-- Центрированный заголовок с белым цветом -->
     <h2 style="color: white; text-align: center; font-weight: bold; margin: 20px 0;">
         Popular Dishes Chart
     </h2>
 
-    <!-- Контейнер для графика на всю ширину страницы -->
     <div style="position: relative; width: 100%; height: 400px; margin: 0 auto; padding-bottom: 30px;">
         <canvas id="myChart" style="border: 1px solid #ccc; background-color: #1E1E2F; border-radius: 8px;"></canvas>
     </div>
@@ -40,19 +38,19 @@
                     datasets: [{
                         label: 'Number of Orders',
                         data: data,
-                        backgroundColor: 'rgba(54, 162, 235, 0.5)',  // Bright blue fill
-                        borderColor: 'rgba(54, 162, 235, 1)',  // Darker blue border
+                        backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
                         borderWidth: 2,
-                        borderRadius: 5  // Rounded corners
+                        borderRadius: 5
                     }]
                 },
                 options: {
                     responsive: true,
-                    maintainAspectRatio: false,  // Stretch to fit the container
+                    maintainAspectRatio: false,
                     layout: {
                         padding: {
                             top: 20,
-                            bottom: 40,  // More space at the bottom to avoid overlap
+                            bottom: 40,
                             left: 20,
                             right: 20
                         }
@@ -62,7 +60,7 @@
                             display: true,
                             position: 'top',
                             labels: {
-                                color: '#FFFFFF',  // White text for legend
+                                color: '#FFFFFF',
                                 font: {
                                     size: 14
                                 }
@@ -72,23 +70,23 @@
                     scales: {
                         x: {
                             ticks: {
-                                color: '#FFFFFF',  // White text for X-axis
-                                autoSkip: false,  // Show all labels
-                                maxRotation: 45,  // Rotate labels to prevent overlap
+                                color: '#FFFFFF',
+                                autoSkip: false,
+                                maxRotation: 45,
                                 minRotation: 45
                             },
                             grid: {
-                                display: false  // Hide grid lines on X-axis
+                                display: false
                             }
                         },
                         y: {
                             beginAtZero: true,
                             ticks: {
-                                color: '#FFFFFF',  // White text for Y-axis
-                                stepSize: 1  // Step size between Y-axis ticks
+                                color: '#FFFFFF',
+                                stepSize: 1
                             },
                             grid: {
-                                display: false  // Hide grid lines on Y-axis
+                                display: false
                             }
                         }
                     }
