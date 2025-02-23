@@ -2,101 +2,34 @@
 {% load static %}
 
 {% block content %}
-    {{ block.super }}
+  <h2>Top 20 Most Popular Dishes</h2>
+  <canvas id="orderChart"></canvas>
 
-    <h2 style="color: white; text-align: center; font-weight: bold; margin: 20px 0;">
-        Popular Dishes Chart
-    </h2>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const ctx = document.getElementById('orderChart').getContext('2d');
+    const chartData = {{ chart_data|safe }};
+    const myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: chartData.labels,
+        datasets: [{
+          label: 'Order Count',
+          data: chartData.data,
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          borderColor: 'rgba(75, 192, 192, 1)',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
 
-    <div style="position: relative; width: 100%; height: 400px; margin: 0 auto; padding-bottom: 30px;">
-        <canvas id="myChart" style="border: 1px solid #ccc; background-color: #1E1E2F; border-radius: 8px;"></canvas>
-    </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            console.log("Loading data from the database...");
-
-            var labels = {{ chart_data.labels|safe }};
-            var data = {{ chart_data.data|safe }};
-
-            console.log("Labels from DB:", labels);
-            console.log("Data from DB:", data);
-
-            var ctx = document.getElementById('myChart');
-
-            if (!ctx) {
-                console.error("Canvas element with id 'myChart' not found!");
-                return;
-            }
-
-            ctx = ctx.getContext('2d');
-
-            new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: labels,
-                    datasets: [{
-                        label: 'Number of Orders',
-                        data: data,
-                        backgroundColor: 'rgba(54, 162, 235, 0.5)',
-                        borderColor: 'rgba(54, 162, 235, 1)',
-                        borderWidth: 2,
-                        borderRadius: 5
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    layout: {
-                        padding: {
-                            top: 20,
-                            bottom: 40,
-                            left: 20,
-                            right: 20
-                        }
-                    },
-                    plugins: {
-                        legend: {
-                            display: true,
-                            position: 'top',
-                            labels: {
-                                color: '#FFFFFF',
-                                font: {
-                                    size: 14
-                                }
-                            }
-                        }
-                    },
-                    scales: {
-                        x: {
-                            ticks: {
-                                color: '#FFFFFF',
-                                autoSkip: false,
-                                maxRotation: 45,
-                                minRotation: 45
-                            },
-                            grid: {
-                                display: false
-                            }
-                        },
-                        y: {
-                            beginAtZero: true,
-                            ticks: {
-                                color: '#FFFFFF',
-                                stepSize: 1
-                            },
-                            grid: {
-                                display: false
-                            }
-                        }
-                    }
-                }
-            });
-        });
-    </script>
-{% endblock %}
-
-{% block extrahead %}
-    {{ block.super }}
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  {{ block.super }}
 {% endblock %}

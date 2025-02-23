@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "food.apps.RestaurantsConfig",
     "logistic.apps.OrdersConfig",
     "rest_framework",
+    "rest_framework_simplejwt",
 ]
 
 UNFOLD = {
@@ -145,3 +146,11 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# DRF
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    ),
+    "DEFAULT_PERMISSION_CLASSES": ["rest_framework.permissions.IsAuthenticated"],
+}
