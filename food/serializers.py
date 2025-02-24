@@ -19,12 +19,6 @@ class DishOrderSerializer(serializers.Serializer):
     dish = serializers.PrimaryKeyRelatedField(queryset=Dish.objects.all())
     quantity = serializers.IntegerField(min_value=1, max_value=20)
 
-
-class DishOrderSerializer(serializers.Serializer):
-    dish = serializers.PrimaryKeyRelatedField(queryset=Dish.objects.all())
-    quantity = serializers.IntegerField(min_value=1, max_value=20)
-
-
 class OrderSerializer(serializers.Serializer):
     food = DishOrderSerializer(many=True)
     total = serializers.IntegerField(min_value=1, read_only=True)
