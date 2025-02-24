@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Restaurant, Dish, DishesOrder, DishOrderItem
+from .models import Restaurant, Dish, DishOrderItem
 from unfold.admin import ModelAdmin
 from django.db.models import Sum
 
@@ -38,11 +38,6 @@ class DishAdmin(ModelAdmin):
         return super().changelist_view(request, extra_context=extra_context)
 
 
-
-@admin.register(DishesOrder)
-class DishesOrderAdmin(ModelAdmin):
-    list_display = ('external_order_id', 'user', 'created_at')
-    search_fields = ('external_order_id',)
 
 
 @admin.register(DishOrderItem)

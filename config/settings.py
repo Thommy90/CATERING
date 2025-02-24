@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+from datetime import timedelta
 import os
 
 BASE_DIR1 = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -42,8 +43,10 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "food.apps.RestaurantsConfig",
     "logistic.apps.OrdersConfig",
+    "users.apps.UsersConfig",
     "rest_framework",
     "rest_framework_simplejwt",
+    "django_extensions",
 ]
 
 UNFOLD = {
@@ -154,3 +157,19 @@ REST_FRAMEWORK = {
     ),
     "DEFAULT_PERMISSION_CLASSES": ["rest_framework.permissions.IsAuthenticated"],
 }
+
+# client -> password + login
+# server -> access token + refresh token
+# client -> token -> request
+# server -> validated token -> user by identifier -> process request -> response
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=60),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
+    "UPDATE_LAST_LOGIN": False,
+    "ALGORITHM": "HS256",
+    "SIGNING_KEY": SECRET_KEY,
+    "AUTH_HEADER_TYPES": ("Bearer",),
+}
+
+
+AUTH_USER_MODEL = "users.User"

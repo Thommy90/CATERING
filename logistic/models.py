@@ -27,5 +27,3 @@ class DeliveryDishesOrder(models.Model):
     status = models.CharField(max_length=50, choices=DELIVERY_STATUSES_CHOICES)
     addresses = models.TextField()
     external_order_id = models.CharField(max_length=255)
-
-    order = models.ForeignKey("food.DishesOrder", on_delete=models.CASCADE)
