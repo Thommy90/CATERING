@@ -20,7 +20,7 @@ class Dish(models.Model):
 
     name = models.CharField(max_length=50, null=True)
     price = models.IntegerField()
-    restaurant = models.ForeignKey("Restaurant", on_delete=models.CASCADE)
+    restaurant = models.ForeignKey("Restaurant", on_delete=models.CASCADE, related_name='dishes')
 
     def __str__(self) -> str:
         return f"{self.name} {self.price}  ({self.restaurant})"
