@@ -13,7 +13,6 @@ class FoodAPIViewSet(viewsets.GenericViewSet):
     @action(methods=["get"], detail=False,)
     def restaurants(self, request):
         restaurants = Restaurant.objects.all()
-        print(restaurants)
         if not restaurants.exists():
             return Response({"error": "No restaurants found"}, status=status.HTTP_404_NOT_FOUND)
         serializer = RestaurantSerializer(restaurants, many=True)
