@@ -1,0 +1,11 @@
+.dockerignore
+.gitignore
+.git/
+.idea/
+.vscode/
+archive/
+Data/
+__pycache__/
+Dockerfile
+compose.yaml
+*.sqlite3
